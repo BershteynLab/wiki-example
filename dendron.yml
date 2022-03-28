@@ -84,7 +84,7 @@ publishing:
         - root
     enableSiteLastModified: true
     siteRootDir: docs
-    siteUrl: 'https://dendronhq.github.io'
+    siteUrl: 'https://github.com/BershteynLab/wiki-example/'
     enableFrontmatterTags: true
     enableHashesForFMTags: false
     enableRandomlyColoredTags: true
