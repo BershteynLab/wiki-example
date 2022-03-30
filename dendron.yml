@@ -78,13 +78,13 @@ publishing:
     enableMermaid: true
     enablePrettyRefs: true
     enableKatex: true
-    #assetsPrefix: 
+    assetsPrefix: /wiki-example
     copyAssets: true
     siteHierarchies:
         - root
     enableSiteLastModified: true
     siteRootDir: docs
-    siteUrl: 'https://github.io/BershteynLab/wiki-example'
+    siteUrl: 'https://github.io/BershteynLab'
     enableFrontmatterTags: true
     enableHashesForFMTags: false
     enableRandomlyColoredTags: true
