@@ -1,0 +1,591 @@
+{
+  "notes": {
+    "403": {
+      "vault": {
+        "fsPath": "vault"
+      },
+      "fname": "403",
+      "id": "403",
+      "title": "This page has not yet sprouted",
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1648667259926,
+      "created": 1648667259927,
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [],
+      "parent": null,
+      "data": {}
+    },
+    "wn8PE1RhG0znK1alrGFYv": {
+      "id": "wn8PE1RhG0znK1alrGFYv",
+      "title": "Root",
+      "desc": "",
+      "updated": 1645566125381,
+      "created": 1631901573363,
+      "custom": {
+        "nav_order": 0,
+        "permalink": "/"
+      },
+      "fname": "root",
+      "type": "note",
+      "vault": {
+        "fsPath": "vault"
+      },
+      "contentHash": "1971199a59e3bbb0557f0796998092ae",
+      "links": [
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "wn8PE1RhG0znK1alrGFYv",
+            "vaultName": "vault"
+          },
+          "value": "emod",
+          "alias": "EMOD usage",
+          "position": {
+            "start": {
+              "line": 5,
+              "column": 3,
+              "offset": 173
+            },
+            "end": {
+              "line": 5,
+              "column": 22,
+              "offset": 192
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "emod"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "wn8PE1RhG0znK1alrGFYv",
+            "vaultName": "vault"
+          },
+          "value": "hiv",
+          "alias": "HIV",
+          "position": {
+            "start": {
+              "line": 7,
+              "column": 5,
+              "offset": 212
+            },
+            "end": {
+              "line": 7,
+              "column": 16,
+              "offset": 223
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "hiv"
+          }
+        }
+      ],
+      "anchors": {
+        "group-wiki": {
+          "type": "header",
+          "text": "Group Wiki",
+          "value": "group-wiki",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        }
+      },
+      "children": [
+        "nxgljwfd9usje6u5rr7fttg",
+        "gxe214k84fqq1idy20ruwcy"
+      ],
+      "parent": null,
+      "data": {}
+    },
+    "gxe214k84fqq1idy20ruwcy": {
+      "id": "gxe214k84fqq1idy20ruwcy",
+      "title": "Hiv",
+      "desc": "",
+      "updated": 1648479154440,
+      "created": 1648479154440,
+      "custom": {},
+      "fname": "hiv",
+      "type": "note",
+      "vault": {
+        "fsPath": "vault"
+      },
+      "contentHash": "7434fb2d1e6163f8c19af24c00b3da35",
+      "links": [
+        {
+          "from": {
+            "fname": "root",
+            "vaultName": "vault"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 7,
+              "column": 5,
+              "offset": 212
+            },
+            "end": {
+              "line": 7,
+              "column": 16,
+              "offset": 223
+            },
+            "indent": []
+          },
+          "value": "hiv",
+          "alias": "HIV"
+        }
+      ],
+      "anchors": {
+        "hiv": {
+          "type": "header",
+          "text": "HIV",
+          "value": "hiv",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        }
+      },
+      "children": [],
+      "parent": "wn8PE1RhG0znK1alrGFYv",
+      "data": {}
+    },
+    "nxgljwfd9usje6u5rr7fttg": {
+      "id": "nxgljwfd9usje6u5rr7fttg",
+      "title": "Emod",
+      "desc": "",
+      "updated": 1648478594806,
+      "created": 1648478594806,
+      "custom": {},
+      "fname": "emod",
+      "type": "note",
+      "vault": {
+        "fsPath": "vault"
+      },
+      "contentHash": "d0eeef5c8d06a53e013c1fd861182e57",
+      "links": [
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "emod",
+            "id": "nxgljwfd9usje6u5rr7fttg",
+            "vaultName": "vault"
+          },
+          "value": "emod.tutorial",
+          "alias": "EMOD Tutorial",
+          "position": {
+            "start": {
+              "line": 16,
+              "column": 1,
+              "offset": 202
+            },
+            "end": {
+              "line": 16,
+              "column": 32,
+              "offset": 233
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "emod.tutorial"
+          }
+        },
+        {
+          "from": {
+            "fname": "root",
+            "vaultName": "vault"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 5,
+              "column": 3,
+              "offset": 173
+            },
+            "end": {
+              "line": 5,
+              "column": 22,
+              "offset": 192
+            },
+            "indent": []
+          },
+          "value": "emod",
+          "alias": "EMOD usage"
+        }
+      ],
+      "anchors": {
+        "emod": {
+          "type": "header",
+          "text": "EMOD",
+          "value": "emod",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "emod-usage": {
+          "type": "header",
+          "text": "EMOD Usage",
+          "value": "emod-usage",
+          "line": 12,
+          "column": 0,
+          "depth": 2
+        },
+        "designing-simulations": {
+          "type": "header",
+          "text": "Designing Simulations",
+          "value": "designing-simulations",
+          "line": 14,
+          "column": 0,
+          "depth": 3
+        },
+        "calibration": {
+          "type": "header",
+          "text": "Calibration",
+          "value": "calibration",
+          "line": 16,
+          "column": 0,
+          "depth": 3
+        },
+        "execution": {
+          "type": "header",
+          "text": "Execution",
+          "value": "execution",
+          "line": 18,
+          "column": 0,
+          "depth": 3
+        },
+        "emod-setup-tutorial": {
+          "type": "header",
+          "text": "EMOD Setup Tutorial",
+          "value": "emod-setup-tutorial",
+          "line": 20,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [
+        "3bqsjktpwcj13ucgmbqv8pf"
+      ],
+      "parent": "wn8PE1RhG0znK1alrGFYv",
+      "data": {}
+    },
+    "3bqsjktpwcj13ucgmbqv8pf": {
+      "id": "3bqsjktpwcj13ucgmbqv8pf",
+      "title": "Tutorial",
+      "desc": "",
+      "updated": 1648478655478,
+      "created": 1648478655478,
+      "custom": {},
+      "fname": "emod.tutorial",
+      "type": "note",
+      "vault": {
+        "fsPath": "vault"
+      },
+      "contentHash": "e4a672917a2b56ca7f631b9dd54ab3be",
+      "links": [
+        {
+          "from": {
+            "fname": "emod",
+            "vaultName": "vault"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 16,
+              "column": 1,
+              "offset": 202
+            },
+            "end": {
+              "line": 16,
+              "column": 32,
+              "offset": 233
+            },
+            "indent": []
+          },
+          "value": "emod.tutorial",
+          "alias": "EMOD Tutorial"
+        }
+      ],
+      "anchors": {
+        "getting-started-with-emod": {
+          "type": "header",
+          "text": "Getting Started with EMOD",
+          "value": "getting-started-with-emod",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "introduction": {
+          "type": "header",
+          "text": "Introduction",
+          "value": "introduction",
+          "line": 10,
+          "column": 0,
+          "depth": 2
+        },
+        "a-guide-to-the-files-in-this-directory": {
+          "type": "header",
+          "text": "A guide to the files in this directory",
+          "value": "a-guide-to-the-files-in-this-directory",
+          "line": 20,
+          "column": 0,
+          "depth": 2
+        },
+        "steps-for-installing-emod-and-dtk-tools": {
+          "type": "header",
+          "text": "Steps for Installing EMOD and DTK-Tools",
+          "value": "steps-for-installing-emod-and-dtk-tools",
+          "line": 50,
+          "column": 0,
+          "depth": 2
+        },
+        "configure-bash-and-python-environment": {
+          "type": "header",
+          "text": "Configure bash and python environment",
+          "value": "configure-bash-and-python-environment",
+          "line": 54,
+          "column": 0,
+          "depth": 3
+        },
+        "install-dtk-tools-and-disease-specific-packages": {
+          "type": "header",
+          "text": "Install DTK-Tools and Disease-Specific Packages",
+          "value": "install-dtk-tools-and-disease-specific-packages",
+          "line": 86,
+          "column": 0,
+          "depth": 3
+        },
+        "guide-to-simulation-setup": {
+          "type": "header",
+          "text": "Guide to Simulation Setup",
+          "value": "guide-to-simulation-setup",
+          "line": 124,
+          "column": 0,
+          "depth": 2
+        },
+        "how-to-calibrate": {
+          "type": "header",
+          "text": "How to calibrate",
+          "value": "how-to-calibrate",
+          "line": 141,
+          "column": 0,
+          "depth": 2
+        },
+        "how-to-run-a-scenario": {
+          "type": "header",
+          "text": "How to run a scenario",
+          "value": "how-to-run-a-scenario",
+          "line": 161,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "nxgljwfd9usje6u5rr7fttg",
+      "data": {}
+    }
+  },
+  "domains": [
+    {
+      "id": "wn8PE1RhG0znK1alrGFYv",
+      "title": "Root",
+      "desc": "",
+      "updated": 1645566125381,
+      "created": 1631901573363,
+      "custom": {
+        "nav_order": 0,
+        "permalink": "/"
+      },
+      "fname": "root",
+      "type": "note",
+      "vault": {
+        "fsPath": "vault"
+      },
+      "contentHash": "1971199a59e3bbb0557f0796998092ae",
+      "links": [
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "wn8PE1RhG0znK1alrGFYv",
+            "vaultName": "vault"
+          },
+          "value": "emod",
+          "alias": "EMOD usage",
+          "position": {
+            "start": {
+              "line": 5,
+              "column": 3,
+              "offset": 173
+            },
+            "end": {
+              "line": 5,
+              "column": 22,
+              "offset": 192
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "emod"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "root",
+            "id": "wn8PE1RhG0znK1alrGFYv",
+            "vaultName": "vault"
+          },
+          "value": "hiv",
+          "alias": "HIV",
+          "position": {
+            "start": {
+              "line": 7,
+              "column": 5,
+              "offset": 212
+            },
+            "end": {
+              "line": 7,
+              "column": 16,
+              "offset": 223
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "hiv"
+          }
+        }
+      ],
+      "anchors": {
+        "group-wiki": {
+          "type": "header",
+          "text": "Group Wiki",
+          "value": "group-wiki",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        }
+      },
+      "children": [
+        "nxgljwfd9usje6u5rr7fttg",
+        "gxe214k84fqq1idy20ruwcy"
+      ],
+      "parent": null,
+      "data": {},
+      "body": "# Group Wiki\n\nHi everyone! I wanted to share this prototype group wiki with everyone. This is one way that we might create a centralized repository documenting our work.\n\n* [[EMOD usage|emod]]\n* Epidemiology\n  * [[HIV|hiv]]\n  * Malaria\n\n> This website is generated by a Dendron template. For more information, see the [template README file](https://github.com/dendronhq/template.publish.github-action/). Feel free to modify and delete this section."
+    }
+  ],
+  "noteIndex": {
+    "id": "wn8PE1RhG0znK1alrGFYv",
+    "title": "Root",
+    "desc": "",
+    "updated": 1645566125381,
+    "created": 1631901573363,
+    "custom": {
+      "nav_order": 0,
+      "permalink": "/"
+    },
+    "fname": "root",
+    "type": "note",
+    "vault": {
+      "fsPath": "vault"
+    },
+    "contentHash": "1971199a59e3bbb0557f0796998092ae",
+    "links": [
+      {
+        "type": "wiki",
+        "from": {
+          "fname": "root",
+          "id": "wn8PE1RhG0znK1alrGFYv",
+          "vaultName": "vault"
+        },
+        "value": "emod",
+        "alias": "EMOD usage",
+        "position": {
+          "start": {
+            "line": 5,
+            "column": 3,
+            "offset": 173
+          },
+          "end": {
+            "line": 5,
+            "column": 22,
+            "offset": 192
+          },
+          "indent": []
+        },
+        "xvault": false,
+        "sameFile": false,
+        "to": {
+          "fname": "emod"
+        }
+      },
+      {
+        "type": "wiki",
+        "from": {
+          "fname": "root",
+          "id": "wn8PE1RhG0znK1alrGFYv",
+          "vaultName": "vault"
+        },
+        "value": "hiv",
+        "alias": "HIV",
+        "position": {
+          "start": {
+            "line": 7,
+            "column": 5,
+            "offset": 212
+          },
+          "end": {
+            "line": 7,
+            "column": 16,
+            "offset": 223
+          },
+          "indent": []
+        },
+        "xvault": false,
+        "sameFile": false,
+        "to": {
+          "fname": "hiv"
+        }
+      }
+    ],
+    "anchors": {
+      "group-wiki": {
+        "type": "header",
+        "text": "Group Wiki",
+        "value": "group-wiki",
+        "line": 7,
+        "column": 0,
+        "depth": 1
+      }
+    },
+    "children": [
+      "nxgljwfd9usje6u5rr7fttg",
+      "gxe214k84fqq1idy20ruwcy"
+    ],
+    "parent": null,
+    "data": {},
+    "body": "# Group Wiki\n\nHi everyone! I wanted to share this prototype group wiki with everyone. This is one way that we might create a centralized repository documenting our work.\n\n* [[EMOD usage|emod]]\n* Epidemiology\n  * [[HIV|hiv]]\n  * Malaria\n\n> This website is generated by a Dendron template. For more information, see the [template README file](https://github.com/dendronhq/template.publish.github-action/). Feel free to modify and delete this section."
+  },
+  "vaults": [
+    {
+      "fsPath": "vault"
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+<h1 id="tutorial"><a aria-hidden="true" class="anchor-heading" href="#tutorial"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Tutorial</h1>
+<h1 id="getting-started-with-emod"><a aria-hidden="true" class="anchor-heading" href="#getting-started-with-emod"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Getting Started with EMOD</h1>
+<h2 id="introduction"><a aria-hidden="true" class="anchor-heading" href="#introduction"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Introduction</h2>
+<p>Welcome to EMOD!</p>
+<p>This repository and the documents contained herein are intended to serve as a basic walkthrough of how to install and run EMOD.</p>
+<p>We will walk through the steps required to use EMOD and DTK-Tools as a black box software model. The full scope of how to build and customize an EMOD model from scratch will not be covered here.  The next recommended steps for understanding the different features and nuances of the epidemiological model are covered elsewhere.</p>
+<p><a href="https://docs.idmod.org/projects/emod-hiv/en/latest/software-overview.html">EMOD Software Overview</a></p>
+<h2 id="a-guide-to-the-files-in-this-directory"><a aria-hidden="true" class="anchor-heading" href="#a-guide-to-the-files-in-this-directory"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>A guide to the files in this directory</h2>
+<p>The present directory contains the following files and directories:</p>
+<ul>
+<li><code>simtools.ini</code></li>
+<li><code>Data/calibration_ingest_form_Malawi_3_node_AB2_no_inc.xlsm</code> - This is the "ingest file." It contains a great deal of information which the simulation uses as inputs. This includes:
+<ul>
+<li>the list of dynamic parameters which will be fit during the calibration stage,</li>
+<li>the list of calibration target variables and how the calibration stage should weight them</li>
+<li>all calibration target data (ie, empirical data used to calibrate the model)</li>
+</ul>
+</li>
+<li><code>InputFiles</code>
+<ul>
+<li><code>Static/Demographics_Malawi.json</code> - Malawi demographics file; includes all mortality and fertility data</li>
+</ul>
+</li>
+<li><code>InputFiles/Templates</code>
+<ul>
+<li><code>PFA_Overlay_Malawi.json</code> - Malawi demographics file which adjusts the pair formation algorithm according to likelihood of pair formation between different demographic groups</li>
+<li><code>Risk_Assortivity_Overlay_Malawi.json</code> - Malawi demographics file which adjusts assortativity between agents according to risk group (ie, risk-prone agents may be more likely to form pairs with other risk-prone agents)</li>
+<li><code>Accessibility_and_Risk_IP_Overlay_Malawi.json</code> - Malawi demographics file which adjusts accessibility and risk</li>
+<li><code>campaign_Malawi_1Dec2021_recalib.json</code> - "Campaign file," which defines the full structure of the network of events which occur in the simulation. Together, this network of events describes the events which lead to transmission; the course of infection within infected individuals; and all the different ways individual agents interact with the health care system --- testing, treatment, care, etc.</li>
+<li><code>config.json</code> - a (mostly) alphabetical list of all parameters which are defined in the simulation. Not all of these parameters are necessary to build a simulation of HIV, but </li>
+</ul>
+</li>
+<li><code>optim_script.py</code> 
+<ul>
+<li>Script for configuring the calibration stage of the simulation</li>
+</ul>
+</li>
+<li><code>run_scenarios.py</code>
+<ul>
+<li>Script for configuring and executing the simulation runs</li>
+</ul>
+</li>
+<li><code>scenarios.csv</code>
+<ul>
+<li>List of scenarios, which are run as part of <code>run_scenarios</code></li>
+</ul>
+</li>
+</ul>
+<p>All together, these files can be used to build and run a simulation of HIV transmission in Malawi using EMOD and DTK-Tools.</p>
+<p>It is recommended that you clone this repo in your personal folder in the Bershteyn lab group directory:</p>
+<p><code>/gpfs/data/bershteynlab/EMOD/[YOUR FOLDER]</code></p>
+<h2 id="steps-for-installing-emod-and-dtk-tools"><a aria-hidden="true" class="anchor-heading" href="#steps-for-installing-emod-and-dtk-tools"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Steps for Installing EMOD and DTK-Tools</h2>
+<p>Follow these steps to install EMOD and DTK-Tools on BigPurple (NYU Langone's cluster):</p>
+<h3 id="configure-bash-and-python-environment"><a aria-hidden="true" class="anchor-heading" href="#configure-bash-and-python-environment"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Configure bash and python environment</h3>
+<ol>
+<li><code>ssh</code> into BigPurple</li>
+<li>Create a virtual python environment for the purpose of holding all the python packages that DTK-Tools depends on. Run the following in the command line:</li>
+</ol>
+<pre><code>python -m venv ~/environments/dtk-tools-p36
+source ~/environments/dtk-tools-p36/bin/activate
+</code></pre>
+<ol start="3">
+<li>Modify the bash environment to automatically launch the python environment just created. Paste the following into the <code>.bashrc</code> file:</li>
+</ol>
+<pre><code># .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
+fi
+
+# User specific aliases and functions
+
+module load singularity/3.1
+module load python/cpu/3.6.5
+module load git/2.17.0
+
+source ~/environments/dtk-tools-p36/bin/activate
+export PYTHONPATH=~/environments/dtk-tools-p36/lib/python3.6/site-packages
+</code></pre>
+<p>Run in command line: <code>source ~/.bashrc</code></p>
+<h3 id="install-dtk-tools-and-disease-specific-packages"><a aria-hidden="true" class="anchor-heading" href="#install-dtk-tools-and-disease-specific-packages"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Install DTK-Tools and Disease-Specific Packages</h3>
+<p>Use git to install DTK-Tools and packages specific to HIV. It is recommended that you install these in the <code>home</code> directory on BigPurple: `gpfs/home/[YOUR NAME]</p>
+<ol>
+<li>
+<p>Make sure that you have access to the Institute for Disease Modeling's github repos. Both dtk-tools and HIV-Analyzers are private, so your github account must be given permission to view and clone </p>
+</li>
+<li>
+<p>Set up a public key on BigPurple and add the key to github. This will allow you to clone and directly download EMOD and DTK-Tools from github onto BigPurple.</p>
+<ul>
+<li><a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">Generate a new ssh key</a></li>
+<li><a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">Add your key to your github account</a></li>
+</ul>
+</li>
+<li>
+<p>Clone the DTK-Tools repo.
+In your <code>home</code> directory on BigPurple, run the following in the command line:</p>
+<pre><code>```
+cd ~
+git clone git@github.com:InstituteforDiseaseModeling/dtk-tools.git dtk-tools-p36
+cd dtk-tools-p36
+python setup_manual.py
+```
+</code></pre>
+<p>In the command line run <code>dtk -h</code> to confirm installation.</p>
+</li>
+<li>
+<p>Clone the HIV-analyzers repo
+In your <code>home</code> directory on BigPurple, run the following in the command line:</p>
+<pre><code>```
+cd ~
+git clone git clone git@github.com:InstituteforDiseaseModeling/HIV-Analyzers.git
+cd HIV-Analyzers
+python setup.py develop
+```
+</code></pre>
+</li>
+<li>
+<p>Install Docker image to run simulations.
+The Docker image creates a virtual environment where all of the packages and extensions required to run EMOD smoothly already exist. This saves the trouble of needing to re-install and re-configure them. Run the following in the command line:</p>
+<pre><code>```
+cd ~
+mkdir images
+cd images
+singularity pull docker://idm-docker-public.packages.idmod.org/nyu/dtk:20200306
+```
+</code></pre>
+</li>
+</ol>
+<h2 id="guide-to-simulation-setup"><a aria-hidden="true" class="anchor-heading" href="#guide-to-simulation-setup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Guide to Simulation Setup</h2>
+<p>The <code>simtools.ini</code> file defines the paths where the simulation looks for inputs and writes outputs.</p>
+<p>It is recommended practice to store simulation outputs in the <code>scratch</code> directory on BigPurple. This is a private directory which can be used for temporary storage. In <code>simtools.ini</code>, set the simulation root path to this location:</p>
+<pre><code>```
+# Path where the experiment/simulation outputs will be stored
+sim_root = /gpfs/scratch/[YOUR NAME]/experiments`
+```
+</code></pre>
+<p>Set the <code>input_root</code> as the path to the current directory</p>
+<pre><code>```
+input_root = /gpfs/data/bershteynlab/EMOD/[YOUR FOLDER]/malawi2022_tutorial/InputFiles/Static
+```
+</code></pre>
+<h2 id="how-to-calibrate"><a aria-hidden="true" class="anchor-heading" href="#how-to-calibrate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>How to calibrate</h2>
+<p>The first stage of the simulation will be to calibrate the model. This process will determine a probability distribution for each of the model parameters designated as "dynamic" which will then be used to run the simulation and produce output.</p>
+<ol>
+<li>Open a virtual environment with <code>screen</code></li>
+<li>Request a compute node on BigPurple: 
+<ul>
+<li><code>srun -p cpu_short -n 2 --mem-per-cpu=8G --time=11:00:00 --pty bash</code> </li>
+<li>More documentation on how to configure the different parts of this command <a href="https://hpcmed.org/guide/slurm">here</a></li>
+</ul>
+</li>
+<li>Run in command line: <code>python optim_script.py</code></li>
+</ol>
+<p>After the simulation runs, a number of new files will appear:</p>
+<ul>
+<li>A directory called <code>Malawi--0.001--rep3--test0</code>
+<ul>
+<li>Contains all of the outputs of each of 10 iterations performed by the simulation (<code>iter0</code>, <code>iter1</code>, etc)</li>
+<li>Inside each <code>iter</code> folder is a set of PDF outputs which record the log-likelihood distribution of each dynamic parameter, and shows how the maximum likelihood parameter value evolves over the course of each iteration during calibration.</li>
+</ul>
+</li>
+<li>Can be ignored:
+<ul>
+<li><code>post_channel_config.json</code> 
+<ul>
+<li>This defines how the simulation population is subdivided demographically in order to match each demographic subgroup to its corresponding calibration target. A schema for the simulation output.</li>
+</ul>
+</li>
+<li><code>output</code>
+<ul>
+<li>A directory which contains a number of <code>HIVCalibSite</code> .csv files.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="how-to-run-a-scenario"><a aria-hidden="true" class="anchor-heading" href="#how-to-run-a-scenario"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>How to run a scenario</h2>
+<p>The second stage of the simulation will be to run an ensemble of simulations. The simulation will draw from the calibrated parameter values from the previous stage and produce model output which may then be analyzed and interpreted.</p>
+<p>Run the following python command inside the compute node on BigPurple:</p>
+<pre><code>```
+python run_scenarios.py -c optim_script.py --resample-method roulette --nsamples 25 --output-dir MWI_baseline --suite-name MWI_baseline --table scenarios.csv --calib-dir Malawi--0.001--rep3--test0
+```
+</code></pre>
+<ul>
+<li><code>-c</code> and <code>--calib-dir</code> : The command references the script used to perform the calibration (<code>optim_script.py</code> and the directory where the calibration results were stored.) </li>
+<li><code>--resample-method</code> and <code>--nsamples</code> : The command allows the user to define how the parameter values will be resampled, and the number of times to resample each parameter</li>
+<li><code>--table</code> : The user provides a table of scenarios to run. In this case, only the baseline will run.</li>
+<li>--output-dir`: Where simulation outputs will go</li>
+</ul>
+<p>After the simulation runs, a number of new files and directories will appear. The output directory will contain a set of reports. These reports will also appear in the <code>sim_root</code> directory defined in <code>simtools.ini</code></p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/wiki-example/notes/nxgljwfd9usje6u5rr7fttg">Emod</a></li>
+</ul>

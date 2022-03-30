@@ -1,0 +1,45 @@
+{
+  "roots": [
+    {
+      "key": "wn8PE1RhG0znK1alrGFYv",
+      "title": "Root",
+      "icon": null,
+      "hasTitleNumberOutlined": false,
+      "vaultName": "vault",
+      "children": [
+        {
+          "key": "nxgljwfd9usje6u5rr7fttg",
+          "title": "Emod",
+          "icon": null,
+          "hasTitleNumberOutlined": false,
+          "vaultName": "vault",
+          "children": [
+            {
+              "key": "3bqsjktpwcj13ucgmbqv8pf",
+              "title": "Tutorial",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "vault",
+              "children": []
+            }
+          ]
+        },
+        {
+          "key": "gxe214k84fqq1idy20ruwcy",
+          "title": "Hiv",
+          "icon": null,
+          "hasTitleNumberOutlined": false,
+          "vaultName": "vault",
+          "children": []
+        }
+      ]
+    }
+  ],
+  "child2parent": {
+    "403": null,
+    "wn8PE1RhG0znK1alrGFYv": null,
+    "gxe214k84fqq1idy20ruwcy": "wn8PE1RhG0znK1alrGFYv",
+    "nxgljwfd9usje6u5rr7fttg": "wn8PE1RhG0znK1alrGFYv",
+    "3bqsjktpwcj13ucgmbqv8pf": "nxgljwfd9usje6u5rr7fttg"
+  }
+}
